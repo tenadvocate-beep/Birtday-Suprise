@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Birthday Surprise ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- FLOATING ROSE PETALS -->
+<div id="petalContainer" aria-hidden="true"></div>
+
+  <audio id="birthdaySong" src="assests/music/birthday.mp3" preload="auto"></audio>
+  <audio id="mainSong" src="assests/music/main-song.mp3" preload="auto" loop></audio>
+
+  <!-- THEATRE CURTAINS -->
+  <div class="curtain-overlay" id="curtains">
+    <div class="theatre-curtain left"></div>
+    <div class="theatre-curtain right"></div>
+  </div>
+
+  <!-- PASSWORD ENTRANCE -->
+  <main class="entrance" id="entrance">
+    <span class="sparkle sparkle-one">✧</span>
+    <span class="sparkle sparkle-two">✦</span>
+    <span class="sparkle sparkle-three">✧</span>
+
+    <p class="top-label">A LITTLE SURPRISE FOR YOU</p>
+
+    <section class="welcome">
+      <p class="mini-sparkle">✧</p>
+      <h1>Ayyyyy, it's your birthday! 🎂</h1>
+      <p class="intro">But first... you need a little password to enter ♡</p>
+
+      <div class="password-card">
+        <h2>ENTER YOUR PASSWORD</h2>
+        <div class="stars">✦ ✦ ✦ ✦</div>
+
+        <form id="passwordForm">
+          <input
+            type="password"
+            id="password"
+            maxlength="4"
+            inputmode="numeric"
+            placeholder="_ _ _ _"
+            autocomplete="off"
+            required
+          >
+
+          <p id="error"></p>
+
+          <button type="submit" id="unlockButton">
+            UNLOCK MY SURPRISE ♡
+          </button>
+        </form>
+
+        <p class="waiting" id="waiting">
+          A little magic is waiting inside...
+        </p>
+      </div>
+      
+    </section>
+
+    <p class="footer">✦ Made with love ✦</p>
+    <div class="down-arrow">↓</div>
+  </main>
+
+<!-- NEW BIRTHDAY WELCOME SCREEN -->
+<section class="intro-flow-screen hidden" id="welcomeScreen">
+  <div class="orb">🐼</div>
+  <p>It's your special day 🌹</p>
+  <h1>Something special awaits you...</h1>
+  <button id="startBirthday">Start</button>
+</section>
+
+<!-- BIRTHDAY COUNTER -->
+<section class="intro-flow-screen hidden" id="birthdayCounterScreen">
+  <div class="orb">🐱</div>
+  <h1>Happy Birthday My Girl 🎀</h1>
+  <p>You have completed</p>
+
+  <div class="birthday-counter">
+    <div>
+      <b id="counterYears">0</b>
+      <small>Years</small>
+    </div>
+    <div>
+      <b id="counterMonths">0</b>
+      <small>Months</small>
+    </div>
+    <div>
+      <b id="counterDays">0</b>
+      <small>Days</small>
+    </div>
+  </div>
+
+  <button id="counterNext">Next</button>
+  <button class="intro-back-button" id="counterBack">← Back</button>
+</section>
+
+<!-- SPECIAL MEMORIES -->
+<section class="intro-flow-screen hidden" id="memoriesScreen">
+ 
+  <h1>Special Memories ✨</h1>
+  <p>Swipe through your favourite moments</p>
+
+  <div class="memories-carousel" id="memoriesCarousel">
+    <div class="memory-placeholder">💗</div>
+    <div class="memory-placeholder">🌹</div>
+    <div class="memory-placeholder">✨</div>
+    <div class="memory-placeholder">💞</div>
+  </div>
+
+  <button id="memoriesContinue">Continue</button>
+  <button class="memory-back-button" id="memoryBack">
+  ← Back
+</button>
+</section>
+
+
+  <!-- MAIN BIRTHDAY CELEBRATION -->
+  <section class="celebration hidden" id="celebration">
+
+    <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+    <div class="floating-decorations" aria-hidden="true">
+      <span>♡</span>
+      <span>✦</span>
+      <span>🎀</span>
+      <span>♡</span>
+      <span>✨</span>
+      <span>🦋</span>
+      <span>✧</span>
+    </div>
+
+    <p class="top-label">TODAY IS ALL ABOUT YOU</p>
+    <h2>HAPPY BIRTHDAY, MY PRINCESS! ♡</h2>
+    <p class="subtitle">A little something made with love.</p>
+
+    <!-- BIRTHDAY PHOTO -->
+    <div class="photo-reveal">
+      <img src="assests/images/main-picture.jpg" alt="Birthday girl">
+
+      <div class="photo-caption">
+        <span>THE GIRL OF THE DAY</span>
+        <h2>Simply unforgettable. ♡</h2>
+      </div>
+    </div>
+
+    <p class="music-note">
+      You deserve all the happiness in the world 🤍
+    </p>
+
+    <!-- BIRTHDAY LETTER -->
+    <div class="letter-section" id="birthdayLetter">
+
+      <p class="letter-eyebrow">A LITTLE SOMETHING FROM MY HEART</p>
+
+      <h3>A letter for you ♡</h3>
+
+      <p class="letter-instruction" id="letterHint">
+        There's something waiting for you inside...
+      </p>
+
+      <div class="envelope-scene" id="envelopeScene">
+
+        <div class="envelope-glow"></div>
+
+        <div class="letter-paper" id="letterPaper">
+          <div class="letter-content">
+
+            <p class="letter-date">A little birthday note ♡</p>
+
+            <h4>To my beautiful birthday girl,</h4>
+
+            <p>
+              To my beautiful NKECHI 🥹💗
+
+              Happy birthday, my baby 🎂🎀❤️
+
+              Today is all about YOUUU! 🥳✨ And honestly, I wish words could do justice to how special you are. I wish you could see yourself through my eyes, even for just a moment, because maybe then you'd understand just how precious you are. 🥹💕
+
+              You are more than someone worth celebrating. You're someone worth appreciating, choosing, caring for and loving in all the little ways that words sometimes fail to explain. 🫶🏽💗
+
+              I hope you never forget how much you matter. I hope life is gentle with your heart, that your dreams find their way to reality, and that every silent prayer you've whispered finds an answer. 🙏🏽✨ I hope this new chapter brings you beautiful surprises, genuine happiness, unexpected blessings and countless reasons to smile. 🌷💞
+
+              I hope you experience a love that makes you feel safe, a friendship that never makes you question your worth, and a happiness that doesn't disappear when things get difficult. 🥹❤️
+
+              And whenever life feels overwhelming, I hope you remember that you are not difficult to love, you are not too much, and you never have to dim your light to deserve affection. 🦋💗
+
+              If I could give you anything today, it would be the ability to see just how beautiful you are, not only in appearance, but in the little things that make you YOU. Your existence is something worth celebrating, and I'm genuinely grateful that the world gets to have you in it. 🥺🌎💕
+
+              So here's to another year of becoming, growing, laughing, discovering yourself and experiencing everything beautiful that life has waiting for you. 🥂🎉
+
+              Happy birthday, Rae! 🎂👑 May this year love you as beautifully as you deserve to be loved. 💐❤️
+
+              **You are special. You are cherished. And I hope you never forget that.** 🥹🫂💗
+
+              With all the love my heart can hold. ♡ 💌
+            </p>
+
+            <p class="letter-signature">
+              With love, always ♡
+            </p>
+
+          </div>
+        </div>
+
+        <button
+          class="envelope"
+          id="openLetterButton"
+          type="button"
+          aria-label="Open your birthday letter"
+          aria-expanded="false"
+        >
+          <span class="envelope-back"></span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-seal">♡</span>
+        </button>
+
+      </div>
+    </div>
+    
+    <!-- CONTINUE TO RAFFLE -->
+    <button type="button" id="goToRaffle" class="raffle-next-button">
+      CONTINUE TO YOUR LITTLE GIFT ♡
+    </button>
+    <button type="button" class="intro-back-button" id="celebrationBack">
+  ← Back
+</button>
+    </section>
+
+    <!-- LUXURY RAFFLE PAGE -->
+    <section class="raffle-page hidden" id="rafflePage">
+
+      <p class="raffle-eyebrow">A LITTLE SOMETHING EXTRA</p>
+
+      <h2>A Gift, Just for You ♡</h2>
+
+      <p class="raffle-description">
+        Because you deserve a little surprise.
+        Let's see what destiny has picked for you...
+      </p>
+
+      <div class="raffle-wheel-container">
+
+        <div class="raffle-pointer"></div>
+
+        <div class="raffle-wheel" id="raffleWheel">
+          <span class="prize-label prize-one">SHAWARMA</span>
+          <span class="prize-label prize-two">BURGER</span>
+          <span class="prize-label prize-three">₦5,000</span>
+          <span class="prize-label prize-four">FOREHEAD PECK</span>
+          <span class="prize-label prize-five">ICE CREAM</span>
+        </div>
+
+        <div class="wheel-center">♡</div>
+
+      </div>
+
+      <button type="button" id="spinButton" class="spin-button">
+        SPIN FOR YOUR GIFT ✨
+      </button>
+
+      <div class="raffle-result hidden" id="raffleResult">
+        <p>YOUR LITTLE SURPRISE IS...</p>
+        <h3 id="prizeResult"></h3>
+
+        <button type="button" id="openGallery" class="raffle-next-button">
+          EXPLORE OUR MEMORIES ♡
+        </button>
+      </div>
+<button class="intro-back-button" id="raffleBack">← Back</button>
+ </section>
+
+    <!-- PHOTO GALLERY (NOW OUTSIDE THE RAFFLE PAGE) -->
+    <section class="gallery-page hidden" id="galleryPage">
+
+      <p class="gallery-eyebrow">A COLLECTION OF LITTLE MOMENTS</p>
+
+      <h2>Little Moments, Forever Memories ♡</h2>
+
+      <p class="gallery-description">
+        Some moments deserve to be kept forever.
+      </p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- WE'LL ADD YOUR PHOTOS HERE -->
+      </div>
+<button class="intro-back-button" id="galleryBack">← Back</button>
+<button type="button" id="showFinalSurprise" class="raffle-next-button">
+  ONE LAST SURPRISE ♡
+</button>  
+</section>
+
+    <!-- FULLSCREEN PHOTO VIEWER -->
+    <div class="photo-viewer hidden" id="photoViewer">
+
+      <button type="button" id="closeViewer" class="viewer-close">
+        &times;
+      </button>
+
+      <button type="button" id="previousPhoto" class="viewer-arrow">
+        &#10094;
+      </button>
+
+      <img src="" alt="Selected memory" id="viewerImage">
+
+      <button type="button" id="nextPhoto" class="viewer-arrow">
+        &#10095;
+      </button>
+
+      <p id="photoCounter"></p>
+
+    </div>
+    
+  </section>
+  <!-- FINAL BIRTHDAY SURPRISE -->
+<section id="finalSurprisePage" class="hidden">
+
+  <div class="final-surprise-content">
+
+    <p class="final-eyebrow">BEFORE YOU GO ♡</p>
+
+    <h2>And one last thing...</h2>
+
+    <div class="final-heart">♡</div>
+
+    <h3>Happy Birthday, MAMA!</h3>
+
+    <p>
+      May your life always be filled with love,
+      laughter, beautiful memories and endless reasons
+      to smile. You deserve every beautiful thing
+      this world has to offer.
+      Je vous aime ♡
+    </p>
+
+    <p class="final-signature">
+      Made with love, just for you. 💗
+    </p>
+
+  </div>
+  <button type="button" class="intro-back-button" id="finalBack">
+  ← Back to Memories
+</button>
+
+</section>
+
+</body>
+</html>
